@@ -16,6 +16,7 @@
 FROM cve-2022-xxxx:1.1
 ENV MYSQL_ROOT_PASSWORD=root
 COPY ./www /var/www/localhost/htdocs/
+RUN chmod -R 777 /var/www/localhost/htdocs/
 ```
 6，在进行build： docker build -t cve-2022-xxxx:1.0 .
 
