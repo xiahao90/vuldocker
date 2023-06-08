@@ -16,10 +16,10 @@
 4，提交一次镜像，用cve命名：docker commit -m="添加代码" -a="壮士" 7e1 cve-2022-xxxx:1.0
 
 5，制作dockerfile,将目录有漏洞的代码copy进去
-
+```
 FROM cve-2022-43256:1.0
 COPY ./www /app/public
-
+```
 6，在进行build： docker build -t cve-2022-xxxx:1.0 .
 
 7，在进行save：docker save cve-2022-xxxx:1.0 -o cve-2022-xxxx.tar
