@@ -25,4 +25,4 @@ docker login
 docker tag cve-2022-xxxx:1.1 你的账号/cve-2022-xxxx:1.0
 docker push 你的账号/cve-2022-xxxx:1.0
 ```
-8，可以在其他服务器上拉了
+8，可以在其他服务器上拉了(如果设置了镜像加速，可能要等明天)
