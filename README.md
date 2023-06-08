@@ -9,21 +9,21 @@
 
 3，进行浏览器访问安装等操作，验证漏洞是否存在。
 
-4，提交一次镜像，用cve命名：docker commit -m="添加代码" -a="壮士" 7e1 cve-2022-xxxx:1.0
+4，提交一次镜像，用cve命名：docker commit -m="添加代码" -a="壮士" 7e1 cve-2022-xxxx:latest
 
 5，制作dockerfile,将目录有漏洞的代码copy进去
 ```
-FROM cve-2022-xxxx:1.1
+FROM cve-2022-xxxx:latest
 ENV MYSQL_ROOT_PASSWORD=root
 COPY ./www /var/www/localhost/htdocs/
 RUN chmod -R 777 /var/www/localhost/htdocs/
 ```
-6，在进行build： docker build -t cve-2022-xxxx:1.0 .
+6，在进行build： docker build -t cve-2022-xxxx:latest .
 
 7，在进行提交dockerhub：
 ```
 docker login
-docker tag cve-2022-xxxx:1.1 你的账号/cve-2022-xxxx:1.0
-docker push 你的账号/cve-2022-xxxx:1.0
+docker tag cve-2022-xxxx:1.1 你的账号/cve-2022-xxxx:latest
+docker push 你的账号/cve-2022-xxxx:latest
 ```
 8，可以在其他服务器上拉了(如果设置了镜像加速，可能要等明天)
