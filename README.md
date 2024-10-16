@@ -32,8 +32,9 @@ RUN chmod -R 777 /var/www/localhost/htdocs/
 
 7，在进行提交dockerhub：
 ```
-docker login
-docker tag cve-2022-xxxx:1.1 你的账号/cve-2022-xxxx:latest
-docker push 你的账号/cve-2022-xxxx:latest
+将xiahao90 改成你自己的账号
+docker login -u xiahao90
+docker tag cve-2022-xxxx:1.1 xiahao90/cve-2022-xxxx:latest
+docker push xiahao90/cve-2022-xxxx:latest
 ```
 8，可以在其他服务器上拉了(如果设置了镜像加速，可能要等明天)
