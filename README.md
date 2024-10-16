@@ -1,3 +1,13 @@
+# 镜像描述
+
+基于alpine制作
+
+Apache/2.4.46+PHP/7.3.22+mysql5.7
+
+启动命令：
+
+docker run -d -v /path/to/project:/var/www/localhost/htdocs/ -e MYSQL_ROOT_PASSWORD=root -p 80:80 -p 3306:3306 --name lamp xiahao90/alpine-lamp
+
 # 制作php漏洞环境镜像
 
 
